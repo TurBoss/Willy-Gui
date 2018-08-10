@@ -44,51 +44,57 @@ Item {
     }
 
     Button {
-        id: button
+        id: button_hminus
         x: 269
         y: 61
         width: 80
         height: 60
         text: qsTr("-")
+        onClicked: control.button_clicked("hminus")
     }
 
     Button {
-        id: button1
+        id: button_hplus
         x: 388
         y: 61
         height: 60
         text: qsTr("+")
+        onClicked: control.button_clicked("hplus")
     }
 
     Button {
-        id: button2
+        id: button_lminus
         x: 269
         y: 136
         height: 60
         text: qsTr("-")
+        onClicked: control.button_clicked("lminus")
     }
 
     Button {
-        id: button3
+        id: button_lplus
         x: 388
         y: 136
         height: 60
         text: qsTr("+")
+        onClicked: control.button_clicked("lplus")
     }
 
     Button {
-        id: button4
+        id: buttonr_rminus
         x: 269
         y: 210
         height: 60
         text: qsTr("-")
+        onClicked: control.button_clicked("rminus")
     }
 
     Button {
-        id: button5
+        id: button_rplus
         x: 388
         y: 210
         height: 60
         text: qsTr("+")
+        onClicked: control.button_clicked("")
     }
 }
