@@ -1,14 +1,35 @@
 #!/bin/env python3
 # -*- coding: utf-8 -*-
 
+import sys
+
+from PyQt5 import QtCore
 from PyQt5.QtGui import QGuiApplication
 from PyQt5.QtQml import QQmlApplicationEngine
 from PyQt5.QtCore import QObject, pyqtSignal, pyqtSlot
 
 
+def message_handler(mode, context, message):
+    mode_strings = {
+        QtCore.QtInfoMsg: 'INFO',
+        QtCore.QtWarningMsg: 'WARNING',
+        QtCore.QtCriticalMsg: 'CRITICAL',
+        QtCore.QtFatalMsg: 'FATAL'
+    }
+
+    mode = mode_strings.get(mode, 'DEBUG')
+
+    print('qt_message_handler: f:{file} l:{line} f():{function}'.format(
+        file=context.file,
+        line=context.line,
+        function=context.function
+    ))
+    print('  {}: {}\n'.format(mode, message))
+
+
 class Control(QObject):
     def __init__(self):
-        QObject.__init__(self)
+        super(Control, self).__init__()
 
         self.current_tab = 0
         self.message = dict()
@@ -24,6 +45,7 @@ class Control(QObject):
 
     @pyqtSlot(int)
     def tab_changed(self, tab):
+        print(tab)
         self.current_tab = tab
         self.message["mode"] = self.current_tab
 
@@ -40,7 +62,8 @@ class Control(QObject):
 
 
 if __name__ == "__main__":
-    import sys
+
+    QtCore.qInstallMessageHandler(message_handler)
 
     # Create an instance of the application
     app = QGuiApplication(sys.argv)
