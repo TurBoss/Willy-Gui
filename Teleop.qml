@@ -3,54 +3,325 @@ import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.2
 
 Item {
-    height: 480
     anchors.fill: parent
 
-    Button {
-        id: button_zplus
-        x: 280
-        y: 80
-        height: 60
-        text: qsTr("Z +")
-    }
-
-    Button {
-        id: button_zminus
-        x: 280
-        y: 212
-        height: 60
-        text: qsTr("Z -")
-    }
-
-    Button {
-        id: button_yplus
-        x: 360
-        y: 146
-        height: 60
-        text: qsTr("Y +")
-    }
-
-    Button {
+    Rectangle {
         id: button_yminus
-        x: 200
-        y: 146
-        height: 60
-        text: qsTr("Y-")
+        x: 80
+        y: 100
+        width: 160
+        height: 140
+        color: "#00000000"
+        radius: 3
+        border.color: "#00000000"
+        Layout.fillHeight: true
+        Layout.fillWidth: true
+        transformOrigin: Item.Center
+        border.width: 3
+        Image {
+            id: image_yminus
+            anchors.rightMargin: 10
+            anchors.leftMargin: 10
+            anchors.bottomMargin: 10
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.topMargin: 10
+            source: "images/left.png"
+
+            Text {
+                anchors.fill: parent
+                text: qsTr("Y-")
+                Layout.preferredWidth: 200
+                Layout.fillHeight: true
+                font.bold: true
+                font.pixelSize: 40
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+            }
+        }
+        MouseArea {
+            id: area_yminus
+            anchors.fill: parent
+            height: 60
+            anchors.rightMargin: 0
+            anchors.bottomMargin: 0
+            anchors.leftMargin: 0
+            anchors.topMargin: 0
+        }
     }
 
-    Button {
-        id: button_xplus
-        x: 446
-        y: 212
-        height: 60
-        text: qsTr("X +")
+    Rectangle {
+        id: button_yplus
+        width: 160
+        height: 140
+        x: 400
+        y: 100
+        color: "#00000000"
+        radius: 3
+        border.color: "#00000000"
+        Layout.fillHeight: true
+        Layout.fillWidth: true
+        transformOrigin: Item.Center
+        border.width: 3
+        Image {
+            id: image_yplus
+            anchors.rightMargin: 10
+            anchors.leftMargin: 10
+            anchors.bottomMargin: 10
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.topMargin: 10
+            source: "images/right.png"
+
+            Text {
+                anchors.fill: parent
+                text: qsTr("Y+")
+                Layout.preferredWidth: 200
+                Layout.fillHeight: true
+                font.bold: true
+                font.pixelSize: 40
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+            }
+        }
+        MouseArea {
+            id: area_yplus
+            anchors.fill: parent
+            height: 60
+            anchors.rightMargin: 0
+            anchors.bottomMargin: 0
+            anchors.leftMargin: 0
+            anchors.topMargin: 0
+        }
     }
 
-    Button {
+    Rectangle {
+        id: button_zminus
+        x: 240
+        y: 300
+        width: 160
+        height: 140
+        color: "#00000000"
+        radius: 3
+        border.color: "#00000000"
+        Layout.fillHeight: true
+        Layout.fillWidth: true
+        transformOrigin: Item.Center
+        border.width: 3
+        Image {
+            id: image_zminus
+            anchors.rightMargin: 10
+            anchors.leftMargin: 10
+            anchors.bottomMargin: 10
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.topMargin: 10
+            source: "images/down.png"
+
+            Text {
+                anchors.fill: parent
+                text: qsTr("Z-")
+                Layout.preferredWidth: 200
+                Layout.fillHeight: true
+                font.bold: true
+                font.pixelSize: 40
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+            }
+        }
+        MouseArea {
+            id: area_zminus
+            anchors.fill: parent
+            height: 60
+            anchors.rightMargin: 0
+            anchors.bottomMargin: 0
+            anchors.leftMargin: 0
+            anchors.topMargin: 0
+        }
+    }
+
+    Rectangle {
+        id: button_zplus
+        width: 160
+        height: 160
+        x: 240
+        y: 40
+        color: "#00000000"
+        radius: 1
+        border.color: "#00000000"
+        Layout.fillHeight: true
+        Layout.fillWidth: true
+        transformOrigin: Item.Center
+        border.width: 3
+        Image {
+            id: image_zplus
+            anchors.rightMargin: 10
+            anchors.leftMargin: 10
+            anchors.bottomMargin: 10
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.topMargin: 10
+            source: "images/up.png"
+
+            Text {
+                anchors.fill: parent
+                text: qsTr("Z+")
+                Layout.preferredWidth: 200
+                Layout.fillHeight: true
+                font.bold: true
+                font.pixelSize: 40
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+            }
+        }
+        MouseArea {
+            id: area_zplus
+            height: 60
+            anchors.fill: parent
+            anchors.rightMargin: 0
+            anchors.bottomMargin: 0
+            anchors.leftMargin: 0
+            anchors.topMargin: 0
+        }
+    }
+
+    Rectangle {
         id: button_xminus
-        x: 109
-        y: 212
-        height: 60
-        text: qsTr("X -")
+        x: 80
+        y: 240
+        width: 160
+        height: 140
+        color: "#00000000"
+        radius: 3
+        border.color: "#00000000"
+        Layout.fillHeight: true
+        Layout.fillWidth: true
+        transformOrigin: Item.Center
+        border.width: 3
+        Image {
+            id: image_xminus
+            anchors.rightMargin: 10
+            anchors.leftMargin: 10
+            anchors.bottomMargin: 10
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.topMargin: 10
+            source: "images/left.png"
+
+            Text {
+                anchors.fill: parent
+                text: qsTr("X-")
+                Layout.preferredWidth: 200
+                Layout.fillHeight: true
+                font.bold: true
+                font.pixelSize: 40
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+            }
+        }
+        MouseArea {
+            id: area_xminus
+            anchors.fill: parent
+            height: 60
+            anchors.rightMargin: 0
+            anchors.bottomMargin: 0
+            anchors.leftMargin: 0
+            anchors.topMargin: 0
+        }
     }
+
+    Rectangle {
+        id: button_xplus
+        width: 160
+        height: 140
+        x: 400
+        y: 240
+        color: "#00000000"
+        radius: 3
+        border.color: "#00000000"
+        Layout.fillHeight: true
+        Layout.fillWidth: true
+        transformOrigin: Item.Center
+        border.width: 3
+        Image {
+            id: image_xplus
+            anchors.rightMargin: 10
+            anchors.leftMargin: 10
+            anchors.bottomMargin: 10
+            anchors.top: parent.top
+            anchors.right: parent.right
+            anchors.bottom: parent.bottom
+            anchors.left: parent.left
+            anchors.topMargin: 10
+            source: "images/right.png"
+
+            Text {
+                anchors.fill: parent
+                text: qsTr("X+")
+                Layout.preferredWidth: 200
+                Layout.fillHeight: true
+                font.bold: true
+                font.pixelSize: 40
+                verticalAlignment: Text.AlignVCenter
+                horizontalAlignment: Text.AlignHCenter
+            }
+        }
+        MouseArea {
+            id: area_xplus
+            anchors.fill: parent
+            height: 60
+            anchors.rightMargin: 0
+            anchors.bottomMargin: 0
+            anchors.leftMargin: 0
+            anchors.topMargin: 0
+        }
+    }
+
+    Connections {
+        target: area_yminus
+        onPressed: {
+            control.button_click("Y", -1)
+            image_yminus.source = "images/left_h.png"
+            area_yplus.enabled = false
+        }
+    }
+
+    Connections {
+        target: area_yminus
+        onReleased: {
+            control.button_click("Y", 0)
+            image_yminus.source = "images/left.png"
+            area_yplus.enabled = true
+        }
+    }
+
+
+    Connections {
+        target: area_yplus
+        onPressed: {
+            control.button_click("Y", 1)
+            image_yplus.source = "images/right_h.png"
+            area_yminus.enabled = false
+        }
+    }
+
+    Connections {
+        target: area_yplus
+        onReleased: {
+            control.button_click("Y", 0)
+            image_yplus.source = "images/right.png"
+            area_yminus.enabled = true
+        }
+    }
+
 }

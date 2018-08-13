@@ -3,12 +3,8 @@ import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.2
 
 Item {
-    height: 420
-
     GridLayout {
         id: gridLayout
-        width: 100
-        height: 100
         columnSpacing: 0
         layoutDirection: Qt.LeftToRight
         flow: GridLayout.LeftToRight

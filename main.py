@@ -37,6 +37,9 @@ class Control(QObject):
         self.message["higher"] = 0
         self.message["lower"] = 0
         self.message["rotate"] = 0
+        self.message["Y"] = 0
+        self.message["Z"] = 0
+        self.message["X"] = 0
 
     # Signal sending sum
     # Necessarily give the name of the argument through arguments=['sum']
