@@ -324,4 +324,78 @@ Item {
         }
     }
 
+    Connections {
+        target: area_zminus
+        onPressed: {
+            control.button_click("Z", -1)
+            image_zminus.source = "images/down_h.png"
+            area_zplus.enabled = false
+        }
+    }
+
+    Connections {
+        target: area_zminus
+        onReleased: {
+            control.button_click("Z", 0)
+            image_zminus.source = "images/down.png"
+            area_zplus.enabled = true
+        }
+    }
+
+
+    Connections {
+        target: area_zplus
+        onPressed: {
+            control.button_click("Z", 1)
+            image_zplus.source = "images/up_h.png"
+            area_zminus.enabled = false
+        }
+    }
+
+    Connections {
+        target: area_zplus
+        onReleased: {
+            control.button_click("Z", 0)
+            image_zplus.source = "images/up.png"
+            area_zminus.enabled = true
+        }
+    }
+
+    Connections {
+        target: area_xminus
+        onPressed: {
+            control.button_click("X", -1)
+            image_xminus.source = "images/left_h.png"
+            area_xplus.enabled = false
+        }
+    }
+
+    Connections {
+        target: area_xminus
+        onReleased: {
+            control.button_click("X", 0)
+            image_xminus.source = "images/left.png"
+            area_xplus.enabled = true
+        }
+    }
+
+
+    Connections {
+        target: area_xplus
+        onPressed: {
+            control.button_click("X", 1)
+            image_xplus.source = "images/right_h.png"
+            area_xminus.enabled = false
+        }
+    }
+
+    Connections {
+        target: area_xplus
+        onReleased: {
+            control.button_click("X", 0)
+            image_xplus.source = "images/right.png"
+            area_xminus.enabled = true
+        }
+    }
+
 }
