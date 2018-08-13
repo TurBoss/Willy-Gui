@@ -31,10 +31,12 @@ class Control(QObject):
     def __init__(self):
         super(Control, self).__init__()
 
-        self.current_tab = 0
         self.message = dict()
 
-        self.message["mode"] = self.current_tab
+        self.message["mode"] = 0
+        self.message["higher"] = 0
+        self.message["lower"] = 0
+        self.message["rotate"] = 0
 
     # Signal sending sum
     # Necessarily give the name of the argument through arguments=['sum']
@@ -44,14 +46,15 @@ class Control(QObject):
     subResult = pyqtSignal(int, arguments=['sub'])
 
     @pyqtSlot(int)
-    def tab_changed(self, tab):
+    def tab_change(self, tab):
         print(tab)
         self.current_tab = tab
         self.message["mode"] = self.current_tab
 
     @pyqtSlot(str, str)
     def button_click(self, button, action):
-        print(button, action)
+        self.message[button] = action
+        print(self.message)
 
     # Slot for subtraction of two numbers
     @pyqtSlot(int, int)

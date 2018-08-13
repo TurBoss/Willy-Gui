@@ -11,17 +11,21 @@ ApplicationWindow {
     color: "whitesmoke"
 
 
+
     TabView {
         id: controlTabView
+        anchors.bottomMargin: 0
+        frameVisible: true
         tabsVisible: true
         anchors.fill: parent
-        tabPosition: 1
         Layout.fillWidth: true
         Layout.fillHeight: true
         currentIndex: 0
 
         Tab {
             id: freeMode
+            height: 420
+            anchors.fill: parent
             source: "Free.qml"
             title: "Free"
         }
@@ -40,8 +44,14 @@ ApplicationWindow {
 
         Tab {
             id: autoMode
+            x: 0
+            y: 0
             source: "Auto.qml"
             title: "Auto"
         }
+    }
+    Connections {
+        target: controlTabView
+        onCurrentIndexChanged: control.tab_change(controlTabView.currentIndex)
     }
 }

@@ -3,8 +3,7 @@ import QtQuick.Controls 1.4
 import QtQuick.Layouts 1.2
 
 Item {
-    height: 400
-    anchors.fill: parent
+    height: 420
 
     GridLayout {
         id: gridLayout
@@ -310,56 +309,63 @@ Item {
     Connections {
         target: area_hminus
         onPressed: {
-            control.button_click("hminus", "pressed")
+            control.button_click("higher", -1)
             image_hminus.source = "images/left_h.png"
+            area_hplus.enabled = false
         }
     }
 
     Connections {
         target: area_hminus
         onReleased: {
-            control.button_click("hminus", "released")
+            control.button_click("higher", 0)
             image_hminus.source = "images/left.png"
+            area_hplus.enabled = true
         }
     }
 
     Connections {
         target: area_hplus
         onPressed: {
-            control.button_click("hplus", "pressed")
+            control.button_click("higher", 1)
             image_hplus.source = "images/right_h.png"
+            area_hminus.enabled = false
         }
     }
 
     Connections {
         target: area_hplus
         onReleased: {
-            control.button_click("hplus", "released")
+            control.button_click("higher", 0)
             image_hplus.source = "images/right.png"
+            area_hminus.enabled = true
         }
     }
 
     Connections {
         target: area_lminus
         onPressed: {
-            control.button_click("lminus", "pressed")
+            control.button_click("lower", -1)
             image_lminus.source = "images/left_h.png"
+            area_lplus.enabled = false
         }
     }
 
     Connections {
         target: area_lminus
         onReleased: {
-            control.button_click("lminus", "released")
+            control.button_click("lower", 0)
             image_lminus.source = "images/left.png"
+            area_lplus.enabled = true
         }
     }
 
     Connections {
         target: area_lplus
         onPressed: {
-            control.button_click("lplus", "pressed")
+            control.button_click("lower", 1)
             image_lplus.source = "images/right_h.png"
+            area_lminus.enabled = false
         }
 
     }
@@ -367,40 +373,45 @@ Item {
     Connections {
         target: area_lplus
         onReleased: {
-            control.button_click("lplus", "released")
+            control.button_click("lower", 0)
             image_lplus.source = "images/right.png"
+            area_lminus.enabled = true
         }
     }
 
     Connections {
         target: area_rminus
         onPressed: {
-            control.button_click("rminus", "pressed")
+            control.button_click("rotate", -1)
             image_rminus.source = "images/left_h.png"
+            area_rplus.enabled = false
         }
     }
 
     Connections {
         target: area_rminus
         onReleased: {
-            control.button_click("rminus", "released")
+            control.button_click("rotate", 0)
             image_rminus.source = "images/left.png"
+            area_rplus.enabled = true
         }
     }
 
     Connections {
         target: area_rplus
         onPressed: {
-            control.button_click("rplus", "pressed")
+            control.button_click("rotate", 1)
             image_rplus.source = "images/right_h.png"
+            area_rminus.enabled = false
         }
     }
 
     Connections {
         target: area_rplus
         onReleased: {
-            control.button_click("rplus", "released")
+            control.button_click("rotate", 0)
             image_rplus.source = "images/right.png"
+            area_rminus.enabled = true
         }
     }
 
