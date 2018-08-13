@@ -24,7 +24,7 @@ def message_handler(mode, context, message):
         line=context.line,
         function=context.function
     ))
-    print('  {}: {}\n'.format(mode, message))
+    print('\t{}: {}\n'.format(mode, message))
 
 
 class Control(QObject):
@@ -49,10 +49,9 @@ class Control(QObject):
         self.current_tab = tab
         self.message["mode"] = self.current_tab
 
-    @pyqtSlot(str)
-    def button_clicked(self, button):
-        print(button)
-
+    @pyqtSlot(str, str)
+    def button_click(self, button, action):
+        print(button, action)
 
     # Slot for subtraction of two numbers
     @pyqtSlot(int, int)

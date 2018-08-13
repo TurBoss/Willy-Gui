@@ -13,6 +13,7 @@ ApplicationWindow {
 
     TabView {
         id: controlTabView
+        tabsVisible: true
         anchors.fill: parent
         tabPosition: 1
         Layout.fillWidth: true
