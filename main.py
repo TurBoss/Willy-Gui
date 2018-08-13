@@ -31,6 +31,8 @@ class Control(QObject):
     def __init__(self):
         super(Control, self).__init__()
 
+        self.current_tab = 0
+
         self.message = dict()
 
         self.message["mode"] = 0
@@ -45,17 +47,15 @@ class Control(QObject):
     # Necessarily give the name of the argument through arguments=['sum']
     # Otherwise it will not be possible to get it up in QML
     sumResult = pyqtSignal(int, arguments=['sum'])
-
     subResult = pyqtSignal(int, arguments=['sub'])
 
     @pyqtSlot(int)
     def tab_change(self, tab):
-        print(tab)
         self.current_tab = tab
-        self.message["mode"] = self.current_tab
 
-    @pyqtSlot(str, str)
+    @pyqtSlot(str, int)
     def button_click(self, button, action):
+        self.message["mode"] = self.current_tab
         self.message[button] = action
         print(self.message)
 
